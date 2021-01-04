@@ -39,10 +39,21 @@ window.alert("Click the 'Generate Password' button to create your password using
 function generatePassword() {
 
 //Arrays for letters, symbols, and numbers.
-var letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var uppercaseLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var symbols = ["`","~","!","@","#","$","%","^","&","*","(",")","?",",",".","{","}","[","]"];
 var numbers = ["0","1","2","3","4","5","6","7","8","9"];
 
+var
+
+for (var i = 0; i < lengthChoice.length; i++) {
+//Step 1 pick a value from one of the arrays above, based on the user selection.
+  //must only include arrays that are "true" based on the user confirmations.
+//Step 2 add that value to an array for the password.
+//Step 3 do this as many times as the length of the password which was chosen by the user.
+//Step 4 Shuffle the array randomly. Use Durstenfield shuffle.
+//Step 5 Return a concatentaion of all the array elements, without any delimiters.
+
+}
 
 
 return "this is your password";
