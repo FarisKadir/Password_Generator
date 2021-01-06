@@ -59,7 +59,8 @@ function randoChar(x)  {
   }
 }
 
-//Found this code that uses Fisher-Yates Shuffle to shuffle an array
+//Found this function online that uses Fisher-Yates Shuffle to shuffle an array. Will be used to make the password more randomized.
+
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -79,10 +80,14 @@ function shuffle(array) {
   return array;
 }
 
+
+//This function will check to see what password criteria was selectedm then randomly choose characters from the appropriate arrays, then create a password using the random selections.
+
 function generatePassword()  {
   for (var i = 0; i < lengthChoice; i++) {
     i = i++;
     if (upperChoice && lowerChoice && symbolChoice && numberChoice) {
+
       randoChar(upperCase);
       
       randoChar(lowerCase);
@@ -91,40 +96,54 @@ function generatePassword()  {
 
       randoChar(symbols);
       
-    } else if (upperChoice && lowerChoice && numberChoice)  {
-        randoChar(upperCase);
-        
-        randoChar(lowerCase);
+    } 
+    else if (upperChoice && lowerChoice && numberChoice)  {
 
-        randoChar(numbers);
-      } else if (upperChoice && lowerChoice && symbolChoice)  {
-        randoChar(upperCase);
-        
-        randoChar(lowerCase);
+      randoChar(upperCase);
+      
+      randoChar(lowerCase);
 
-        randoChar(symbols);
+      randoChar(numbers);
 
-        } else if (upperChoice && symbolChoice && numberChoice)  {
-        randoChar(upperCase);
-        
-        randoChar(symbols);
+    } 
+    else if (upperChoice && lowerChoice && symbolChoice)  {
 
-        randoChar(numbers);
+      randoChar(upperCase);
+      
+      randoChar(lowerCase);
 
-          } else if (symbolChoice && lowerChoice && numberChoice)  {
-            randoChar(symbols);
-            
-            randoChar(lowerCase);
-    
-            randoChar(numbers);
-            } else if (upperChoice && lowerChoice)  {
-              randoChar(upperCase);
-              
-              randoChar(lowerCase);
-              } else if (upperChoice && numberChoice)  {
-                randoChar(upperCase);
+      randoChar(symbols);
+
+    } 
+    else if (upperChoice && symbolChoice && numberChoice)  {
+
+      randoChar(upperCase);
+      
+      randoChar(symbols);
+
+      randoChar(numbers);
+
+    } 
+    else if (symbolChoice && lowerChoice && numberChoice)  {
+
+      randoChar(symbols);
+      
+      randoChar(lowerCase);
+
+      randoChar(numbers);
+
+    } 
+    else if (upperChoice && lowerChoice)  {
+
+      randoChar(upperCase);
+      
+      randoChar(lowerCase);
+
+    } 
+    else if (upperChoice && numberChoice)  {
+                  randoChar(upperCase);
                 
-                randoChar(numbers);
+                  randoChar(numbers);
                 } else if (upperChoice && symbolChoice)  {
                   randoChar(upperCase);
                   
@@ -162,9 +181,9 @@ function generatePassword()  {
                           }
   }
 
-  console.log(randoArr);
-  console.log(password);
-  console.log(password.length);
+  // console.log(randoArr);
+  // console.log(password);
+  // console.log(password.length);
 
   return password;
 }
